@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <% if (userData) { %>
+    <p>ID: <%= userData.id %></p>
+    <p>First Name: <%= userData.firstname %></p>
+    <p>Email: <%= userData.email %></p>
+    <p>Mobile: <%= userData.mobile %></p>
+    <p>Gender: <%= userData.gender %></p>
+    <p>Status: <%= userData.status %></p>
+    <!-- Add more fields as needed -->
+    
+
+  <% } else { %>
+    <p>User not found.</p>
+  <% } %>
+</body>
+</html>

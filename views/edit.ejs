@@ -1,0 +1,29 @@
+<!-- 'update.ejs' template -->
+<form action="/editsave/<%= userData.id %>" method="POST">
+    <!-- Prepopulate form fields with user data -->
+    <% if (userData) { %>
+    <input type="hidden" name="id" value="<%= userData.id %>">
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstname" name="firstname" value="<%= userData.firstname %>" required><br><br>
+    
+    <label for="mobile">Mobile:</label>
+    <input type="text" id="mobile" name="mobile" value="<%= userData.mobile %>" required minlength="10" maxlength="10"><br><br>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="Male" <%= userData.gender === 'Male' ? 'selected' : '' %>>Male</option>
+        <option value="Female" <%= userData.gender === 'Female' ? 'selected' : '' %>>Female</option>
+    </select><br><br>
+    
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="Active" <%= userData.status === 'Active' ? 'selected' : '' %>>Active</option>
+        <option value="In-Active" <%= userData.status === 'In-Active' ? 'selected' : '' %>>In-Active</option>
+    </select><br><br>
+    
+    <input type="submit" value="Update">
+    <% } else { %>
+        <p>User not found.</p>
+      <% } %>
+  </form>
+  

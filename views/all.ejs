@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="/css/card.css"> <!-- Assuming you have a CSS file for styling -->
+</head>
+<body>
+    <!-- <form id="search-form">
+        <label for="searchname">Search by Name:</label>
+        <input type="text" id="searchname" name="searchname">
+        <button type="submit">Search</button>
+    </form> -->
+    <form action="/findbyname" method="POST">
+        <label for="searchname">Searchname</label>
+        <input type="text" id="searchname" name="searchname" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+  <h1>User List</h1>
+  <div class="user-cards">
+    <% alluserData.forEach(function(user) { %>
+      <div class="user-card">
+        <h2><a href="readd/<%= user.id %>"><%= user.firstname %></a></h2>
+        <p>Email: <%= user.email %></p>
+        <!-- Add more fields as needed -->
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>
